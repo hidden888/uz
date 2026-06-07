@@ -1,4 +1,4 @@
-const PITCH_SEMITONES = 9;
+const PITCH_SEMITONES = -6;
 const WINDOW_SIZE = 0.1;
 
 async function processAudio(blob) {

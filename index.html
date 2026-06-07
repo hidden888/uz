@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mickey Mouse Stimmen-Konverter</title>
+  <title>Balu der Bär Stimmen-Konverter</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app">
     <header>
-      <div class="ears">
-        <div class="ear ear-left"></div>
-        <div class="ear ear-right"></div>
-        <div class="head-circle"></div>
+      <div class="bear">
+        <div class="bear-ear bear-ear-left"></div>
+        <div class="bear-ear bear-ear-right"></div>
+        <div class="bear-head"></div>
+        <div class="bear-snout"></div>
       </div>
-      <h1>Mickey Mouse<br>Stimmen-Konverter</h1>
+      <h1>Balu der Bär<br>Stimmen-Konverter</h1>
     </header>
 
     <main>
@@ -29,7 +30,7 @@
 
       <div id="spinner-overlay" class="spinner-overlay hidden" aria-hidden="true">
         <div class="spinner"></div>
-        <p>Mickey zaubert...</p>
+        <p>Balu brummt...</p>
       </div>
 
       <section id="result-zone" class="result-zone hidden">
@@ -39,20 +40,20 @@
             <audio id="audio-original" controls></audio>
           </div>
           <div class="divider">&#8594;</div>
-          <div class="player-card mickey-card">
-            <h2>&#127908; Mickey Mouse</h2>
+          <div class="player-card balu-card">
+            <h2>&#127867; Balu der Bär</h2>
             <audio id="audio-mickey" controls></audio>
           </div>
         </div>
-        <a id="btn-download" class="btn-download" download="mickey-voice.wav">
-          &#11123; Mickey-Stimme herunterladen
+        <a id="btn-download" class="btn-download" download="balu-stimme.wav">
+          &#11123; Balu-Stimme herunterladen
         </a>
         <button id="btn-again" class="btn-again">Neue Aufnahme</button>
       </section>
     </main>
 
     <footer>
-      <p>Sprich einfach — Mickey macht den Rest! &#9733;</p>
+      <p>Probier's aus — Balu macht den Rest! &#128058;</p>
     </footer>
   </div>
 
