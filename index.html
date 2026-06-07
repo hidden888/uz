@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mickey Mouse Stimmen-Konverter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="ears">
+        <div class="ear ear-left"></div>
+        <div class="ear ear-right"></div>
+        <div class="head-circle"></div>
+      </div>
+      <h1>Mickey Mouse<br>Stimmen-Konverter</h1>
+    </header>
+
+    <main>
+      <section class="record-zone">
+        <button id="btn-record" class="btn-record" aria-label="Aufnahme starten">
+          <span class="btn-icon">&#9679;</span>
+          <span class="btn-label">Aufnahme starten</span>
+        </button>
+        <div id="timer-display" class="timer" aria-live="polite">00:00</div>
+        <div id="status-text" class="status" aria-live="polite">Klicke auf den Button und sprich!</div>
+      </section>
+
+      <div id="spinner-overlay" class="spinner-overlay hidden" aria-hidden="true">
+        <div class="spinner"></div>
+        <p>Mickey zaubert...</p>
+      </div>
+
+      <section id="result-zone" class="result-zone hidden">
+        <div class="players">
+          <div class="player-card">
+            <h2>Original</h2>
+            <audio id="audio-original" controls></audio>
+          </div>
+          <div class="divider">&#8594;</div>
+          <div class="player-card mickey-card">
+            <h2>&#127908; Mickey Mouse</h2>
+            <audio id="audio-mickey" controls></audio>
+          </div>
+        </div>
+        <a id="btn-download" class="btn-download" download="mickey-voice.wav">
+          &#11123; Mickey-Stimme herunterladen
+        </a>
+        <button id="btn-again" class="btn-again">Neue Aufnahme</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Sprich einfach — Mickey macht den Rest! &#9733;</p>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+  <script src="audio-processor.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

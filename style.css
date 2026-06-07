@@ -1,0 +1,314 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red: #e62020;
+  --red-dark: #b01010;
+  --yellow: #ffd700;
+  --black: #111;
+  --white: #fff;
+  --gray: #f0f0f0;
+  --shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+body {
+  background: var(--red);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 700px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ── Header / Mickey Icon ── */
+header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ears {
+  position: relative;
+  width: 120px;
+  height: 90px;
+}
+
+.ear {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--black);
+  border-radius: 50%;
+  top: 0;
+}
+
+.ear-left  { left: 0; }
+.ear-right { right: 0; }
+
+.head-circle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background: var(--black);
+  border-radius: 50%;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  letter-spacing: 0.02em;
+}
+
+/* ── Main card ── */
+main {
+  background: var(--white);
+  color: var(--black);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Record zone ── */
+.record-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.btn-record {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 6px solid var(--black);
+  background: var(--gray);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: inherit;
+}
+
+.btn-record:hover {
+  background: #e0e0e0;
+  transform: scale(1.04);
+}
+
+.btn-record:active {
+  transform: scale(0.97);
+}
+
+.btn-record.recording {
+  background: var(--red);
+  border-color: var(--red-dark);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.btn-record.recording .btn-icon {
+  color: var(--white);
+}
+
+.btn-record.recording .btn-label {
+  color: var(--white);
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(230,32,32,0.5); }
+  50%       { box-shadow: 0 0 0 16px rgba(230,32,32,0); }
+}
+
+.btn-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--red);
+}
+
+.btn-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--black);
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.timer {
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.1em;
+  color: var(--black);
+  min-height: 2.5rem;
+}
+
+.status {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  min-height: 1.5rem;
+}
+
+/* ── Spinner overlay ── */
+.spinner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 24px;
+  z-index: 10;
+}
+
+.spinner-overlay p {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--red);
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 6px solid #eee;
+  border-top-color: var(--red);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Result zone ── */
+.result-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid #eee;
+  margin-top: 2rem;
+}
+
+.players {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.player-card {
+  background: var(--gray);
+  border-radius: 16px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  flex: 1;
+  min-width: 220px;
+}
+
+.player-card h2 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.mickey-card {
+  background: #fff3cc;
+  border: 2px solid var(--yellow);
+}
+
+.mickey-card h2 {
+  color: var(--red-dark);
+}
+
+audio {
+  width: 100%;
+  max-width: 260px;
+}
+
+.divider {
+  font-size: 2rem;
+  color: var(--red);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.btn-download {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-download:hover {
+  background: #ffc800;
+  transform: translateY(-1px);
+}
+
+.btn-again {
+  background: none;
+  border: 2px solid #ccc;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-again:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* ── Footer ── */
+footer {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+/* ── Utility ── */
+.hidden {
+  display: none !important;
+}
