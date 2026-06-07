@@ -34,7 +34,6 @@ body {
   gap: 2rem;
 }
 
-/* ── Header / Mickey Icon ── */
 header {
   text-align: center;
   display: flex;
@@ -80,7 +79,6 @@ header h1 {
   letter-spacing: 0.02em;
 }
 
-/* ── Main card ── */
 main {
   background: var(--white);
   color: var(--black);
@@ -92,7 +90,6 @@ main {
   overflow: hidden;
 }
 
-/* ── Record zone ── */
 .record-zone {
   display: flex;
   flex-direction: column;
@@ -177,7 +174,6 @@ main {
   min-height: 1.5rem;
 }
 
-/* ── Spinner overlay ── */
 .spinner-overlay {
   position: absolute;
   inset: 0;
@@ -210,7 +206,6 @@ main {
   to { transform: rotate(360deg); }
 }
 
-/* ── Result zone ── */
 .result-zone {
   display: flex;
   flex-direction: column;
@@ -301,14 +296,12 @@ audio {
   color: var(--red);
 }
 
-/* ── Footer ── */
 footer {
   font-size: 0.85rem;
   opacity: 0.8;
   text-align: center;
 }
 
-/* ── Utility ── */
 .hidden {
   display: none !important;
 }
