@@ -41,7 +41,7 @@ function setState(next) {
   } else if (next === 'ready') {
     spinnerOverlay.classList.add('hidden');
     resultZone.classList.remove('hidden');
-    statusText.textContent = 'Fertig! Viel Spaß mit deiner Mickey-Stimme!';
+    statusText.textContent = 'Fertig! Viel Spaß mit deiner Balu-Stimme!';
     btnRecord.querySelector('.btn-label').textContent = 'Aufnahme starten';
     btnRecord.querySelector('.btn-icon').textContent = '●';
   }
@@ -106,7 +106,7 @@ async function startRecording() {
         mickeyBlobUrl = URL.createObjectURL(wavBlob);
         audioMickey.src = mickeyBlobUrl;
         btnDownload.href = mickeyBlobUrl;
-        btnDownload.download = `mickey-voice-${Date.now()}.wav`;
+        btnDownload.download = `balu-stimme-${Date.now()}.wav`;
         setState('ready');
       } catch (err) {
         console.error(err);
